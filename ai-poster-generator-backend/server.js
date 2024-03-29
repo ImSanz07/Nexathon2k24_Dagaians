@@ -16,10 +16,15 @@ app.post("/sendData",async(req,res)=>{
     const {time} = req.body;
     const {date} = req.body;
     const {description} = req.body;
-    const prompt = `Create a stunning background for the given poster.Include the text from the Event Title.Make it as beautiful and perfect as possible.\nEvent: ${eventName}\nTime: ${time}\nDate: ${date}\nVenue: ${venue}\nDescription: ${description}`;
+    const prompt = `Design Text Based Event Poster for ${eventName} which is ${description},${venue},${time},${date},always generate or include text,Always add photorealistic image,focus of human anatomy,Generate Discrete Images without Merging them,Always include QR code for registration,Generate a realistic and sharp image without any artistic effects,4k resolution,creative,highly detailed, sharp focus,vibrant colors,high detail,realistic lighting,realistic,cyberpunk,sci-fi`;
 
-    await generateImage(prompt); 
+    const negativeprompt = `Blurry,Easynegative, bad-hands-5, low quality, poorly drawn, out of focus, bad composition`;
+  
 
+    
+
+    const imageData = await generateImage(prompt,negativeprompt); 
+    res.send(imageData);
     console.log(prompt);
 
 });

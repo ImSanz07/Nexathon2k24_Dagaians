@@ -1,17 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400..800&display=swap');
+
+body {
+    font-family: "Baloo Bhai 2", sans-serif;
+}
+
 .ai-poster-generator {
     display: flex;
     flex-direction: column;
     margin: auto;
     align-items: center;
-    margin-top: 80px;
-    margin-bottom: 20px;
-    gap: 30px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    gap: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 20px 25px;
+    border-radius: 30px;
 }
 
 .header {
     font-size: 70px;
     font-weight: 500;
-    padding-bottom: 30px;
 }
 
 .header span {
@@ -23,20 +30,51 @@
 .img-loading {
     display: flex;
     flex-direction: column;
+    margin-bottom: 15px;
 }
 
 .img-loading img {
     width: 512px;
 }
 
+.loading-bar {
+    width: 0;
+    height: 8px;
+    background: #ff00ff;
+}
+
+.loading-text {
+    font-family: 18px;
+}
+
+.loading-bar-full {
+    width: 512px;
+    height: 8px;
+    background: #ff00ff;
+    transition: width 15s linear;
+}
+
+.display-none {
+    display: none;
+}
+
+
+.title {
+    font-size: x-large;
+    font-weight: 600;
+
+}
+
 .search-box {
     display: flex;
-    width: 1000px;
+    width: 700px;
     height: 600px;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    border-radius: 50px;
-    background: #1F3540;
+    background: #ffffff;
+    margin: 50px;
+    margin-top: 0px;
 }
 
 .search-input {
@@ -59,13 +97,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 300px;
-    height: 85px;
+    width: 170px;
+    height: 65px;
     font-size: 20px;
     border-radius: 50px;
-    background: #de1b89;
+    background: #7fd3ed;
     cursor: pointer;
-    margin-top: 30px;
+    margin: 80px;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.generate-btn:hover {
+    background: grey;
+    transition: 0.2s;
 }
 
 input[type=text] {
@@ -74,6 +119,7 @@ input[type=text] {
     margin: 8px 0;
     box-sizing: border-box;
 }
+
 textarea {
     width: 100%;
     height: 70px;
